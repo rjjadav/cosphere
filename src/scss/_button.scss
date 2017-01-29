@@ -1,0 +1,18 @@
+.btn-google-plus{
+	background: $google-plus !important;
+}
+
+.btn-fb{
+	background: $fb !important;
+}
+
+.btn-white-hover{
+	background: #fff !important;
+	border: solid 1px $color-8 !important;
+	color: $color-8 !important;
+
+	&:hover{
+		background: $color-8 !important;
+		color: #fff !important;
+	}
+}

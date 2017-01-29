@@ -1,0 +1,134 @@
+#searchSection{
+	.filter-section {
+		background: #f0f0f0;
+		box-shadow: 0px 0px 3px rgba(0,0,0,.30);
+		position: relative;
+		z-index: 11;
+
+		.filter-icon {
+			display: inline-block;
+			width: 73px;
+			border-right: solid 1px #c2c2c2;
+			height: 54px;
+			line-height: 54px;
+			text-align: center;
+			color: #9f9f9f;
+			vertical-align: middle;
+		}
+
+		.filter-list {
+			display: inline-block;
+			vertical-align: middle;
+		
+			.filter{
+				display: inline-block;
+				border-right: solid 1px #c2c2c2;
+				height: 54px;
+				md-select{
+					margin : 15px 0px 0px 15px;
+					width: 120px;
+				}
+			}
+		}
+
+		.clear-button{
+			background: none !important;
+			border: solid 1px #3e5c6a !important;
+			box-shadow: none !important;
+			color: #3e5c6a !important;
+			transition: 0.2s;
+
+			&:hover{
+				background: #3e5c6a !important;
+				color: #fff !important;
+			}
+		}
+	}
+
+	.search-section{
+		height: calc(100vh - 118px);
+		overflow-y: auto;
+		background: #fff;
+
+		.info-text{
+			color: $color-6;
+			font-size: 13px;
+			font-weight: 300;
+		}
+
+		md-chips {
+			.md-chips{
+				box-shadow: none !important;	
+			}
+
+			md-chip{
+				font-size: 11px;
+			}
+			.custom-chip-close{
+				margin: 0;
+				padding: 0;
+				width: 30px;
+				height: 30px;
+				font-size: 11px;
+				top: 2px;
+
+				i {
+					font-size: 13px;
+				}
+			}
+		}
+
+		md-card {
+			img{
+				height: 200px !important;
+				width: 100%;
+			}
+			md-card-content{
+				background: $color-7;
+				color: $color-3;
+			}
+
+			.spacename{
+				font-size: 16px;
+				font-weight: bold;
+				color: #333;
+				text-overflow: ellipsis;
+			}
+
+			.nearby {
+				text-align: right;
+				font-size: 12px;
+				color: #60bf79;
+				font-weight: bold;
+			}
+
+			.price {
+				position: absolute;
+				bottom: 15px;
+				background: rgba(62,92,106,.8);
+				padding: 10px;
+				color: #FFFFFF;
+				font-size: 18px;
+				z-index: 2;
+			}
+
+			.fav{
+				position: absolute;
+				top: 15px;
+				right: 14px;
+				background: #435a77;
+				color: #fff;
+
+				&:hover{
+					background: #ff5722;
+				}
+			}
+		}
+	}
+
+	.map-section{
+		ng-map{
+			height: 100% !important;
+		}
+	}
+}

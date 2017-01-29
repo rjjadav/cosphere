@@ -1,0 +1,59 @@
+<div layout="column" flex>
+	<div layout="row" layout-align="center center">
+		<md-button class="md-icon-button" aria-label="More" ng-click="login.dialog = 'main'">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</md-button>
+		<h3 layout="row" layout-align="center center" flex>Registration</h3>	
+	</div>
+	
+	<div layout="column" layout-margin flex>
+		<md-input-container flex>
+			<label>Full Name</label>
+			<input type="text" ng-model="login.login.name" required>
+		</md-input-container>
+
+		<md-input-container flex>
+			<label>Email</label>
+			<input type="email" ng-model="login.login.email" required>
+		</md-input-container>
+
+		<md-input-container flex>
+			<label>Password</label>
+			<input type="password" ng-model="login.login.password" required>
+		</md-input-container>
+
+		<md-input-container flex>
+			<label>Business Type</label>
+			<md-select ng-model="login.login.businessType">
+				<md-option value="Startup Founder">Startup Founder</md-option>
+				<md-option value="Startup Employee">Startup Employee</md-option>
+				<md-option value="Independent Freelancer">Independent Freelancer</md-option>
+				<md-option value="Foreign Entity Employee">Foreign Entity Employee</md-option>
+				<md-option value="Remote Team Employee">Remote Team Employee</md-option>
+				<md-option value="Part Time Employee">Part Time Employee</md-option>
+				<md-option value="Work From Home Employee">Work From Home Employee</md-option>
+				<md-option value="Student">Student</md-option>
+				<md-option value="Team / HR manager">Team / HR manager </md-option>
+				<md-option value="SMB manager / employee">SMB manager / employee </md-option>
+				<md-option value="Space owner / manager">Space owner / manager </md-option>
+				<md-option value="Broker">Broker </md-option>
+				<md-option value="location.name">
+								location.name
+							</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-button class="md-primary md-raised" flex>
+			Register
+		</md-button>
+
+		<md-button class="md-primary" flex>
+			Forgot Password?
+		</md-button>
+	</div>
+
+	<div class="bottom mt-20">
+		Already have an account? 
+		<a href="javascript:void(0)" ng-click="login.dialog = 'login'">Login</a>
+	</div>
+</div>

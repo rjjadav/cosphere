@@ -1,0 +1,142 @@
+<md-content class="pt-64" id="searchSection">
+	<div class="filter-section" layout="row" flex layout-align="center start">
+		<div class="filter-icon">
+			<i class="material-icons mt-15">tune</i>
+		</div>
+		<div class="filter-list">
+			<div class="filter">
+				<md-select 
+					ng-model="search.selectedSpaces" 
+					placeholder="SPACE" 
+					class="md-no-underline"
+					ng-change="search.changeFilter('space')"
+					multiple>
+					<md-option ng-value="space.spaceType" ng-repeat = "space in search.spaces">
+						{{space.spaceType}}
+					</md-option>
+					<!-- <md-option value="sword">Sword</md-option>
+					<md-option value="wand">Wand</md-option>
+					<md-option value="pen">Pen?</md-option> -->
+				</md-select>
+			</div>
+
+			<div class="filter">
+				<md-select 
+					ng-model="search.selectedVenues" 
+					placeholder="VENUE" 
+					class="md-no-underline"
+					ng-change="search.changeFilter('venue')"
+					multiple>
+					<md-option ng-value="venue.name" ng-repeat = "venue in search.venues">
+						{{venue.name}}
+					</md-option>
+				</md-select>
+			</div>
+
+			<div class="filter">
+				<md-select 
+					ng-model="search.selectedAmenities" 
+					placeholder="AMENITIES" 
+					class="md-no-underline" 
+					ng-change="search.changeFilter('amenities')"
+					multiple>
+					<md-option ng-value="amenity.name" ng-repeat = "amenity in search.amenities">
+						{{amenity.name}}
+					</md-option>
+				</md-select>
+			</div>
+		</div>
+		<span flex></span>
+		<md-button class="clear-button" ng-click="search.clearFilters()">Clear All</md-button>
+	</div>
+	<div layout="row" layout-fill>
+		<div flex="55" class="search-section" layout="column">
+			<div class="info-text" layout-padding>
+				We know how hard it is to find the right space at an affordable price with the flexibility needed to grow your business
+			</div>
+			<div layout-padding ng-if="search.filteredResult" >
+				<i>Found {{search.filteredResult.length}} Search Result</i>
+			</div>
+			<div>
+				<md-chips ng-model="search.spaces" name="space" readonly="true"
+				md-removable="true">
+					<md-chip-template>
+						{{$chip.spaceType}}
+					</md-chip-template>
+
+					<md-button md-chip-remove class="md-icon-button custom-chip-close">
+						<i class="material-icons">close</i>
+					</md-button>
+				</md-chips>
+			</div>
+
+			<div layout="row" layout-wrap layout-margin>
+				<md-card flex=45 
+				ng-repeat="space in search.filteredResult" 
+				ng-click="null" 
+				ng-mouseover="search.getSpaceId(space.spaceId)"
+				ng-mouseleave="search.selectedSpaceId = undefined"
+				ui-sref="app.space({productId : space.productId})">
+					<div class="position-relative">
+						<img src="http://cosphere.in:29193/bmdimgvideos/spacemainimg/356x281/{{space.thumbnailPic}}">
+						<div class="price">
+							<span ng-if="space.spacePlanTerm == 'Day,Monthly'">
+								<i class="fa fa-inr" aria-hidden="true"></i>
+								{{space.perDay}}/Day
+							</span>
+							<span ng-if="space.spacePlanTerm == 'hourly,Day'">
+								<i class="fa fa-inr" aria-hidden="true"></i>
+								{{space.perHalfDay}}/Hour
+							</span>
+							<span ng-if="space.spacePlanTerm == 'Monthly'">
+								<i class="fa fa-inr" aria-hidden="true"></i>
+								{{space.perMonth}}/Month
+							</span>
+						</div>
+						<md-button class="md-fab md-mini md-primary fav" aria-label="Comment">
+							<i class="fa fa-heart-o" aria-hidden="true"></i>
+						</md-button>
+					</div>
+					
+					<md-card-content>
+						<div layout="row" flex>
+							<div flex="80" class="spacename">{{space.spaceType}}</div>
+							<div flex="20" class="nearby">
+								<i class="fa fa-map-marker" aria-hidden="true"></i> 0.40KM
+							</div>
+						</div>
+						<p>
+							{{search.venueMap[space.venueId].area_tag}}
+							<br>	
+							{{search.venueMap[space.venueId].area}}  
+							|   {{search.venueMap[space.venueId].city}}
+						</p>
+					</md-card-content>
+				</md-card>
+			</div>
+		</div>
+		<div flex="45" class="map-section">
+
+			<ng-map zoom="11" center="{{search.center}}" style="height: 100%">
+				<info-window id="external" template="tpls/partials/infowindow.html"></info-window>
+				<marker ng-repeat="space in search.filteredResult"
+					icon="assets/images/map-icon.png" 
+					position="{{search.venueMap[space.venueId].gmap_coordinates}}"
+					ng-if="space.spaceId != search.selectedSpaceId"
+					on-click="search.showSpaces(event, space.venueId)">	
+				</marker>
+
+				<marker ng-repeat="space in search.filteredResult"
+					icon="assets/images/bluemap.png" 
+					position="{{search.venueMap[space.venueId].gmap_coordinates}}"
+					animation="Animation.BOUNCE"
+					ng-if="space.spaceId == search.selectedSpaceId">
+				</marker>
+				<!-- animation="Animation.BOUNCE" -->
+				<!-- <marker position="[28.4800816,77.0378194]" icon="assets/images/map-icon.png" animation="Animation.DROP"></marker> -->
+				<!-- <marker position="[28.4612037,77.0504752]" ></marker>
+				<marker position="[28.4611989,77.0526639]" title="drag me" draggable="true"></marker> -->
+			</ng-map>
+		</div>
+	</div>
+</md-content>

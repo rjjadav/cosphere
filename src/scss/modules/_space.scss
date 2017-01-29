@@ -1,0 +1,264 @@
+#spaceSection{
+	background: #f0f0f0 !important;
+
+	.slider-section{
+		/*height: 500px;*/
+		background: pink;
+		height: 62vh;
+		/*width: 100vw;
+		max-height: 100vh;
+		background: pink;
+		margin: auto;
+		position: relative;*/
+
+		img{
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	.space-details{
+		height:100px;
+		width: 100%;
+		border-bottom: solid 1px #dce0e0;
+
+		h3{
+			font-size: 21px;
+			font-weight: 300;
+			color: #333;
+		}
+	}
+
+	.verified {
+		display: inline-block;
+		font-size: 12px;
+		color: #999;
+
+		.verfiedcircle {
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 24px;
+			font-size: 14px;
+			background: #8BC34A;
+			display: inline-block;
+			color: #fff;
+			font-weight: 100;
+			position: relative;
+			z-index: 3;
+		}
+
+		.verifiedtext {
+			display: inline-block;
+			height: 18px;
+			padding: 0 10px;
+			border-radius: 4px;
+			font-size: 10px;
+			background: #8BC34A;
+			line-height: 18px;
+			color: #fff;
+			font-weight: 600;
+			margin-left: -12px;
+			position: relative;
+			top: -1px;
+		}
+	}
+
+	.neardetail {
+		font-size: 12px;
+		color: #60bf79;
+		font-weight: bold;
+		float: right;
+		margin-left: 10px;
+	}
+
+	.space-info{
+		background: #f0f0f0;
+		padding: 20px 0;
+
+		.titlessection {
+			border-bottom: solid 1px #cccccc;
+			padding: 15px 0 15px 15px;
+			font-size: 18px;
+			font-weight: 300;
+		}
+
+		.amenities-list{
+			div{
+				padding: 10px 0 10px 15px;
+				font-size: 12px;
+				color: #666;
+				font-weight: 300;
+
+				img{
+					width: 16px;
+					margin-right: 5px;
+				}
+			}
+			
+		}
+
+		.avail {
+			border-bottom: solid 1px #ebebeb;
+			border-top: solid 1px #ebebeb;
+			margin-left: 10px;
+			height: 85px;
+
+			.workingfeature {
+				display: inline-block;
+				font-size: 12px;
+				min-height: 83px;
+			}
+
+			.tablefull {
+				display: table;
+				width: 100%;
+				height: 83px;
+			}
+
+			.imgtable {
+				display: table-cell;
+				width: 60px;
+				text-align: center;
+				border-right: 1px solid #ebebeb;
+				border-left: 1px solid #ebebeb;
+				padding: 15px;
+				vertical-align: middle;
+				background: #f6f6f6;
+
+				img {
+					width: 40px;
+				}
+			}
+
+
+			.texttable {
+				display: table-cell;
+				padding-left: 10px;
+				vertical-align: top;
+				color: #666;
+				padding: 15px;
+			}
+
+			.desc {
+				padding: 15px;
+				font-size: 13px;
+				color: #333;
+				font-weight: 300;
+			}			
+		}
+	}
+
+	.reserve-section{
+		/*.md-datepicker-button{
+			display: none !important;
+		}*/
+
+		.md-datepicker-input-container{
+			margin: 0px !important;
+			width: 100%;
+		}
+
+		md-datepicker{
+			padding-right: 0px !important;
+		}
+		._md-datepicker-floating-label._md-datepicker-has-calendar-icon > label:not(.md-no-float):not(.md-container-ignore){
+			right: auto !important;
+		}
+		
+		.md-datepicker-triangle-button.md-button.md-icon-button {
+			display: none;
+		}
+		.counter{
+			background: #e1e1e1;
+			.counts{
+				display: inline-table;
+				padding-top: 14px;
+				button:first-child {
+					border-radius: 2px 0 0 2px !important;
+				}
+
+			}
+			.button-plus,.button-minus {
+				width: 34px;
+				height: 34px;
+				border: solid 1px #fff;
+				background: #fff;
+				box-shadow: 0 0 3px rgba(0,0,0,.2);
+				line-height: 34px;
+				font-size: 18px;
+				font-weight: bold;
+			}
+
+			input[type="text"] {
+				width: 80px;
+				margin-bottom: 5px;
+				border: solid 1px #fff;
+				background: #fff;
+				box-shadow: 0 0 3px rgba(0,0,0,.2);
+				line-height: 32px;
+				font-size: 18px;
+				font-weight: bold;
+				height: 34px;
+				vertical-align: top;
+				text-align: center;
+			}
+		}
+
+	}
+
+	.input-icon-right{
+		position: absolute;
+		right: 15px;
+		padding-top: 5px;
+	}
+
+	.blue-bg{
+		background: #0090bf !important;
+	}
+
+	.visit-button{
+		color: #0090bf !important;
+		border: 1px solid #0090bf !important;
+	}
+
+	.share-fab-button{
+		position: fixed;
+		bottom: 85px;
+		right: 25px;
+	}
+
+	.fb-fab{
+		background: #3b5998;
+		color: #fff;
+	}
+
+	.twitter-fab{
+		background: #2cb2e4;
+		color: #fff;
+	}
+}
+
+.visitdiv{
+	width: 600px;
+	height: 100%;
+	max-height: 100% !important;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	.visit-toolbar{
+		border-bottom: solid 1px #d6d6d6;
+		color: #000 !important;
+	}
+
+	h4 {
+		font-weight: 600;
+		
+		padding: 15px;
+	}
+
+	.schedule-button{
+		background: #0090bf !important;
+	}
+}

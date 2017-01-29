@@ -1,0 +1,623 @@
+<div id="list" layout="row" flex class="flex-scrollable" layout-align="center center">
+	<div flex="55" flex-sm="100" flex-xs="100"  layout-margin>
+		<div layout="column" flex  layout-margin class="white-bg brad-4"> 
+			<div layout="row" flex="100" layout-align="center center">
+				<img src="assets/images/layer-logo.png">
+			</div>
+			<div layout="column" flex="100" layout-align="center center">
+				<h2>CoSphere - REDEFINING WORKSPACES</h2>
+				<h5>Office Sharing Listing Form</h5>
+			</div>
+
+			<form name="ListingForm" layout="column" layout-margin>
+					
+					
+				<md-radio-group model="list.listing.venue_category">
+					<label>Venue Category</label>
+					<md-radio-button ng-repeat="category in list.venueCategory | unique" ng-value="category.name">
+						{{category.name}}
+					</md-radio-button>
+				</md-radio-group>
+
+				<md-input-container flex>
+					<label>Venue Name</label>
+					<input type="text" name="" ng-model="list.listing.venue_name">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Venue Company Name</label>
+					<input type="text" name="" ng-model="list.listing.venue_company_name">
+				</md-input-container>
+
+				<md-radio-group model="list.listing.venue_category">
+					<label>Venue City</label>
+					<md-radio-button ng-repeat="city in list.venueCity | unique" ng-value="city.name">
+						{{city.name}}
+					</md-radio-button>
+				</md-radio-group>
+
+				<md-input-container flex>
+					<label>Venue Area</label>
+					<input type="text" name="" ng-model="list.listing.area">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Venue Address Line 1</label>
+					<input type="text" name="" ng-model="list.listing.street_address1">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Venue Address Line 2</label>
+					<input type="text" name="" ng-model="list.listing.street_address2">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Floors/ Suits</label>
+					<input type="text" name="" ng-model="list.listing.area">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Pincode</label>
+					<input type="text" name="" ng-model="list.listing.pincode">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Point of Interest (PoI) or Nearby Landmark</label>
+					<input type="text" name="" ng-model="list.listing.area_tag">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Full Name of Person Contact</label>
+					<input type="text" name="" ng-model="list.listing.contact_person_name">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Title of Person Contact</label>
+					<input type="text" name="" ng-model="list.listing.contact_person_title">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Email of Person Contact</label>
+					<input type="text" name="" ng-model="list.listing.email">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Mobile of Person Contact</label>
+					<input type="text" name="" ng-model="list.listing.mobile">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Office Phone of Person Contact</label>
+					<input type="text" name="" ng-model="list.listing.office_phone">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>PAN</label>
+					<input type="text" name="" ng-model="list.listing.pan">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Service Tax Number</label>
+					<input type="text" name="" ng-model="list.listing.service_tax_number">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Service Tax Percentage</label>
+					<input type="text" name="" ng-model="list.listing.service_tax_percentage">
+				</md-input-container>
+
+				<h4>Bank account details for online transfer</h4>
+
+				<md-input-container flex>
+					<label>Account Holder Name</label>
+					<input type="text" name="" ng-model="list.listing.bankAccount.accountHolderName">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Bank Name</label>
+					<input type="text" name="" ng-model="list.listing.bankAccount.bankName">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Bank Account Number</label>
+					<input type="text" name="" ng-model="list.listing.bankAccount.bankAccountNumber">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Bank IFSC Code</label>
+					<input type="text" name="" ng-model="list.listing.bankAccount.ifscCode">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Venue Website</label>
+					<input type="text" name="" ng-model="list.listing.venueWebsite">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Number Of Floors</label>
+					<md-select ng-model="list.listing.noOfFloors">
+						<md-option value="1">1</md-option>
+						<md-option value="2">2</md-option>
+						<md-option value="3">3</md-option>
+						<md-option value="4">4</md-option>
+						<md-option value="5">5</md-option>
+					</md-select>
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Floor Capacity (in Sq. Ft.)</label>
+					<input type="text" name="" ng-model="list.listing.floorCapacity">
+				</md-input-container>
+
+				<label>Total Capacity</label>
+				<div layout="row" layout-margin>
+					<md-input-container flex>
+						<label>No. of Desks</label>
+						<input type="text" name="" ng-model="list.listing.noOfDesks">
+					</md-input-container>
+
+					<md-input-container flex>
+						<label>No. of Cabins</label>
+						<input type="text" name="" ng-model="list.listing.noOfCabins">
+					</md-input-container>
+
+					<md-input-container flex>
+						<label>No. of Meeting Rooms</label>
+						<input type="text" name="" ng-model="list.listing.noOfMeetingRooms">
+					</md-input-container>
+				</div>
+
+				<label>Opening Days</label>
+				<div layout="row" layout-margin flex>
+					<span flex="35	"></span>
+					<span flex="30">Opening Time</span>
+					<span flex="30">Closing Time</span>
+					<span flex></span>
+				</div>
+				
+				<md-divider></md-divider>
+
+				<div layout="row" flex layout-align="center center" layout-margin>
+					<span flex="30">Mon-Fri</span>
+					<span flex="25" layout="row">
+						<input type="text" name="" ng-model="list.listing.openingDays.monFri.openingTime" flex>
+						<span flex="40">AM</span>
+					</span>
+						
+					<span flex="25" layout="row">
+						<input type="text" name="" ng-model="list.listing.openingDays.monFri.closingTime" flex>
+						<span flex="40">PM</span>
+					</span>
+					<span flex>
+						<md-checkbox ng-model="list.listing.openingDays.monFri.isClosed" aria-label="Checkbox 1">
+							Closed
+						</md-checkbox>
+					</span>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" flex layout-align="center center" layout-margin>
+					<span flex="30">Saturday</span>
+					<span flex="25" layout="row">
+						<input type="text" name="" ng-model="list.listing.openingDays.sat.openingTime" flex>
+						<span flex="40">AM</span>
+					</span>
+					<span flex="25" layout="row">
+						<input type="text" name="" ng-model="list.listing.openingDays.sat.closingTime" flex>
+						<span flex="40">PM</span>
+					</span>
+					<span flex>
+						<md-checkbox ng-model="list.listing.openingDays.sat.isClosed" aria-label="Checkbox 1">
+							Closed
+						</md-checkbox>
+					</span>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" flex layout-align="center center" layout-margin>
+					<span flex="30">Sunday</span>
+					<span flex="25" layout="row">
+						<input type="text" name="" ng-model="list.listing.openingDays.sun.openingTime" flex>
+						<span flex="40">AM</span>
+					</span>
+					<span flex="25" layout="row">
+						<input type="text" name="" ng-model="list.listing.openingDays.sun.closingTime" flex>
+						<span flex="40">AM</span>
+					</span>
+					<span flex>
+						<md-checkbox ng-model="list.listing.openingDays.sun.isClosed" aria-label="Checkbox 1">
+							Closed
+						</md-checkbox>
+					</span>
+				</div>
+				<md-divider></md-divider>
+
+				<label>Type of Spaces Available</label>
+				<div layout="column">
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex="20" class="text-center"></span>
+						<span flex="20" class="text-center">Number</span>
+						<span flex="20" class="text-center">Price / Hour</span>
+						<span flex="20" class="text-center">Price / Day</span>
+						<span flex="20" class="text-center">Price / Month</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Hot Desk</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.hotDesk.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.hotDesk.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.hotDesk.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.hotDesk.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Dedicated Desk</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.dedicatedDesk.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.dedicatedDesk.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.dedicatedDesk.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.dedicatedDesk.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Meeting Room</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.meetingRoom.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.meetingRoom.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.meetingRoom.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.meetingRoom.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Team Office</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.teamOffice.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.teamOffice.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.teamOffice.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.teamOffice.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Video Conference Room</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.videoConferenceRoom.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.videoConferenceRoom.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.videoConferenceRoom.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.videoConferenceRoom.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Executive Cabin</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.executiveCabin.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.executiveCabin.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.executiveCabin.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.executiveCabin.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Furnished Desk</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.furnishedDesk.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.furnishedDesk.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.furnishedDesk.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.furnishedDesk.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Board Room</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.boardRoom.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.boardRoom.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.boardRoom.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.boardRoom.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+					<div layout="row" flex layout-align="center center" layout-margin>
+						<span flex class="text-center">Event / Training Room</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.trainingRoom.number">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.trainingRoom.pricePerHour">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.trainingRoom.pricePerDay">
+						</span>
+						<span flex class="text-center">
+							<input flex="50" type="text" name="" ng-model="list.listing.space.trainingRoom.pricePerMonth">
+						</span>
+					</div>
+					<md-divider></md-divider>
+				</div>
+
+				<md-radio-group model="list.listing.enableInstantBookings" layout-margin>
+					<label>Enable Instant Booking</label>
+					<md-radio-button value="Yes">
+						Yes
+					</md-radio-button>
+					<md-radio-button value="No">
+						No
+					</md-radio-button>
+				</md-radio-group>
+
+				<md-input-container flex>
+					<label>Host Name</label>
+					<input type="text" name="" ng-model="list.listing.host.name">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Host Mobile Number</label>
+					<input type="text" name="" ng-model="list.listing.host.mobile">
+				</md-input-container>
+
+				<md-input-container flex>
+					<label>Host Email</label>
+					<input type="text" name="" ng-model="list.listing.host.emailId">
+				</md-input-container>
+
+				<label>Amenities Available</label>
+				<span>(Check All that Apply)</span>
+				<div layout="row" layout-align="center center" layout-margin>
+					<span flex="50"></span>
+					<span flex>Free</span>
+					<span flex>Paid</span>
+				</div>
+				<md-divider></md-divider>
+				<md-radio-group model="list.listing.amenities.open247" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Open 24/ 7</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.internetWithWifi" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Internet With WiFi</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.printer" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Printer / Scanner / Fax</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.acWithPowerBackup" layout-margin layout="row" layout-align="center center">
+					<span flex="50">AC with Power Backup</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.teaCoffee" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Tea / Coffee</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.onsiteCafeteria" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Onsite Cafeteria</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.locker" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Locker / Storage</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.carParking" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Car Parking</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.visitorLounge" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Visitor Lounge</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.reception" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Reception / Front Desk</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.projector" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Projector / AV Equipment</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.whiteboard" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Whiteboard</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.event" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Events</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.games" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Games / Library</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.cctvMonitor" layout-margin layout="row" layout-align="center center">
+					<span flex="50">CCTV Monitor / Professional Security</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<md-radio-group model="list.listing.amenities.partitioned" layout-margin layout="row" layout-align="center center">
+					<span flex="50">Partitioned / Noise Proof</span>
+					<md-radio-button value="Free" flex></md-radio-button>
+					<md-radio-button value="Paid" flex></md-radio-button>
+				</md-radio-group>
+				<md-divider></md-divider>
+
+				<h2>General Terms and Conditions :</h2>
+
+				<span>I/we as the space provider hereby confirm that:</span>
+
+
+				<ol>
+					<li>
+						All the particulars mentioned in the form and the photographs are correct, true, actual and not misleading. Any change in information will be promptly intimated to Cosphere.
+					</li>
+					<li>
+						Detailed filled in the form shall be construed as representation for listing/continuous listing as the space provider
+					</li>
+					<li>
+						I am duly authorised as per charter of my organization to fill the form and getting listed with Cosphere as Space Provider
+					</li>
+					<li>
+						I/we shall, at all the time   provide the amenities as agreed and accepted by me in the form and as available in the Workspace to the space seeker during his occupancy.
+					</li>
+					<li>
+						Pricing of workspace inventory would be reasonable, competitive and as confirmed by Cosphere listing team. Every workspace on Cosphere is listed on standard pricing based on location, building type and furnishing matrix.
+					</li>
+					<li>
+						I/we hereby authorize Cosphere to receive payment from customers on our behalf. Cosphere will deduct its fees and remit the balance payment to I within agreed time 3 working days  from the date of receipt of payment from Space Occupier. 
+					</li>
+					<li>
+						I/we have billing facilities available at our premises. I/We will issue invoice to the Customer.
+					</li>
+					<li>
+						At all time will keep the pricing of the listing workspace available and shall not bargain with the prospective occupant at a lower price than what is listed on Cosphere platform.
+					</li>
+					<li>
+						In case of an offline booking/renewal with a Cosphere referred space seeker, I/we undertake to complete the transaction via Cosphere platform. In case of circumvention.
+					</li>
+					<li>
+						I/we agree to pay the applicable fees to Cosphere for each booking confirmed with Cosphere referred space seeker. Further, circumvention may lead to delisting of workspace on Cosphere platform and redirection of other potential space seekers to other Professional Workspaces listed on Cosphere platform.
+					</li>
+					<li>
+						CoSphere fee is equivalent to 10% in case of monthly occupancy and 20% in case of short on-demand occupancy by the hours and/or days through its platform. Office space provider shall not be charged extra or above the listed price and will be deducted from the listed price on our platform
+					</li>
+					<li>
+						Cosphere provides services as a booking platform and will not be responsible or any contravention of any agreement between the customers and me/us.
+					</li>
+					<li>
+						Cosphere maintain the right to remove/delete/modify the listing as per marketing dynamics, internal policies, feedback from users and as per revision in strategy without any prior intimation.
+					</li>
+					<li>
+						My/our listing as space provider should not be construed or shall not create any agency, employment relationship, partnership, principal-agent or other form of joint enterprise with Cosphere.
+					</li>
+					<li>
+						I/We permit co-branding of Cosphere by putting its signpost at my/our premises.
+					</li>
+					<li>
+						Cosphere shall not undertake any liability in case of any disputes between me/us &amp; space seeker. Cosphere shall not be party to any such dispute.
+					</li>
+					<li>
+						I/we shall provide food and beverage (alcoholic/non-alcoholic) strictly in compliance with applicable laws, rules and regulation.
+					</li>
+					<li>
+						In case of referral of space seeker, I/we shall keep the space ready for use as per specifications as claimed in the form. In case of failure in doing so, Cosphere shall be entitled to claim the for damages from me/us and take appropriate actions against by delisting, blocking for certain period.
+					</li>
+					<li>
+						Except to the extent caused by Cosphere gross negligence or willful misconduct, Cosphere, it’s employees &amp; including its agents &amp; independent contractors shall have no liability whatsoever.
+					</li>
+					<li>
+						I/we hereby undertake to keep and hold Cosphere, its employees, representatives, promoters and directors indemnified and harmless from and against any actions, claims, demands, costs, liabilities, judgments, expenses brought by space occupier or any third party for breach or alleged breach of the terms, obligations, or any representation or misrepresentation made.
+					</li>
+					<li>
+						In event of any dispute or difference between me/us and Cosphere, dispute shall be first tried to be settled amicably. If it could not be settled amicably, disputes shall be referred to arbitration by single arbitrator in accordance with Arbitration and conciliation Act. Subject to the above, courts in Gurugram shall have exclusive jurisdiction with respect to this Agreement.
+  					</li>
+				</ol>
+
+				<md-checkbox ng-model="list.acceptTnc">
+					I Accept the terms and conditions mentioned above
+				</md-checkbox>
+
+				<md-input-container>
+					<label>Remarks & Suggestions</label>
+					<input type="text" name="" ng-model="list.listing.remarks">
+				</md-input-container>
+
+				<md-input-container>
+					<label>Name and Signature</label>
+					<input type="text" name="" ng-model="list.listing.sign">
+				</md-input-container>
+
+				<md-button class="md-primary md-raised">Submit</md-button>
+			</form>
+		</div>
+	</div>
+</div>

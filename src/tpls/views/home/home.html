@@ -1,0 +1,429 @@
+<div layout="column" id="home">
+<div class="section-bg">
+		<div class="find">
+			<span class="cw animated bounceInDown">Find your perfect Cosphere</span>
+		</div>
+		<div class="text-center booktext">
+			<span class="cw animated fadeInLeft">
+				Book on-demand and Pay per-use. No Lease. No High Deposite
+			</span>
+		</div>
+		<div class="search-home" layout="row" layout-align="center center">
+			<div class="search-wrapper animated fadeIn">
+				<div class="location">
+					<div class="input-field">
+						<md-select ng-model="home.city"  placeholder="Select City"> 
+							<md-option>Select City</md-option>
+							<md-option ng-repeat="location in home.locations" ng-value="location.name">
+								{{location.name}}
+							</md-option>
+						</md-select>
+					</div>
+				</div>
+
+				<div layout="row" class="searchtextbox" layout-align="start center" flex layout-margin>
+				<!-- <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+				<input type="text" placeholder="Where do you want work" flex> 
+				ng-autocomplete
+				options="options" details="loactionDetails"
+				-->
+				
+				<md-input-container md-no-float class="md-block">
+					<i class="fa fa-map-marker location-marker" aria-hidden="true"></i>
+					<!-- <input type="text" vs-google-autocomplete ng-model="home.location" placeholder="Where do you want work" > -->
+					<input type="text" ng-autocomplete ng-model="home.location" placeholder="Where do you want work" options="options" details="loactionDetails">
+				</md-input-container>
+			</div>
+			<div class="space">
+				<div class="input-field">
+					<md-select ng-model="home.selectedSpace"  placeholder="Select Space"> 
+						<md-option value="all">All Spaces</md-option>
+						<md-option ng-repeat="space in home.spaces" ng-value="space.spaceType">
+							{{space.spaceType}}
+						</md-option>
+					</md-select>
+				</div>
+			</div>
+			<div class="searchbutton">
+				<button ng-click="home.searchSpaces(home.city, home.location,loactionDetails,home.selectedSpace)">Search</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="darkbluebg">
+	<div layout="column" layout-align="center center" layout-margin flex>
+		<h1 class="white-text" flex>
+			One size does not fit all - find your perfect space
+		</h1>
+		<h4 flex class="white-text">
+			Book on-demand for the need you have, pay per-use by the hour, day or month
+			<!-- {{details.geometry}} -->
+		</h4>
+	</div>
+	<div layout="row" layout-align="center start" flex>
+		<div flex flex-gt-md='85' flex-gt-lg='85'>
+			<md-grid-list
+			md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+			md-row-height-gt-md="1:1" md-row-height="4:3"
+			md-gutter="14px">
+
+			<md-grid-tile class="gray"
+			md-rowspan="2" md-colspan="2">
+				<img src="assets/images/box1.jpg">
+				<md-grid-tile-footer layout="row" layout-align="center center">
+					<h3>Coworking</h3>
+				</md-grid-tile-footer>
+			</md-grid-tile>
+
+			<md-grid-tile 
+			class="green" 
+			md-rowspan="1" 
+			md-colspan="2">
+				<img src="assets/images/box2.jpg">
+				<md-grid-tile-footer layout="row" layout-align="center center">
+					<h3>Meeting Room</h3>
+				</md-grid-tile-footer>
+			</md-grid-tile>
+
+			<md-grid-tile 
+			class="green" 
+			md-rowspan="1" 
+			md-colspan="2">
+				<img src="assets/images/box3.jpg">
+				<md-grid-tile-footer layout="row" layout-align="center center">
+					<h3>Virtual Office</h3>
+				</md-grid-tile-footer>
+			</md-grid-tile>
+
+			<md-grid-tile  
+				class="green" 
+				md-rowspan="1" 
+				md-colspan="4">
+				<img src="assets/images/box4.jpg">
+				<md-grid-tile-footer layout="row" layout-align="center center">
+					<h3>Event / Training Hall</h3>
+				</md-grid-tile-footer>
+			</md-grid-tile>
+
+			<md-grid-tile 
+				class="green" 
+				md-rowspan="1" 
+				md-colspan="2">
+				<img src="assets/images/box5.jpg">
+				<md-grid-tile-footer layout="row" layout-align="center center">
+					<h3>Team Office</h3>
+				</md-grid-tile-footer>
+			</md-grid-tile>
+
+			<md-grid-tile 
+			class="green" 
+			md-rowspan="1" 
+			md-colspan="4">
+				<img src="assets/images/box6.jpg">
+				<md-grid-tile-footer layout="row" layout-align="center center">
+					<h3>Hotel & Cafe</h3>
+				</md-grid-tile-footer>
+			</md-grid-tile>
+		</md-grid-list>
+	</div>
+</div>
+</div>
+
+<div class="verfiedservice">
+	<div layout="column" layout-align="center center" layout-margin flex>
+		<h1 flex>
+			Our verified unique spaces offers you the Flexibility and 
+			<br/>Affordability you need
+		</h1>
+	</div>
+
+	<div layout="row" layout-align="center start" flex>
+		<div flex flex-gt-md='65' flex-gt-lg='65' >
+			<div layout="row" flex layout-align="center center">
+				<div flex="33" layout="column" layout-align="center center" class="iconimg">
+					<img src="assets/images/v1.png">
+					<span>
+						Free Internet
+					</span>
+				</div>
+				<div flex="33" layout="column" layout-align="center center" class="iconimg">
+					<img src="assets/images/v2.png">
+					<span>
+						Verified Venues
+					</span>
+				</div>
+				<div flex="33" layout="column" layout-align="center center" class="iconimg">
+					<img src="assets/images/v3.png">
+					<span>
+						Centrally Air-Conditioned Spaces
+					</span>
+				</div>
+			</div>
+			<div layout="row" flex>
+				<div flex="33" layout="column" layout-align="center center" class="iconimg">
+					<img src="assets/images/v4.png">
+					<span>
+						100% Power back-up
+					</span>
+				</div>
+				<div flex="33" layout="column" layout-align="center center" class="iconimg">
+					<img src="assets/images/v5.png">
+					<span>
+						Plans for every need
+					</span>
+				</div>
+				<div flex="33" layout="column" layout-align="center center" class="iconimg">
+					<img src="assets/images/v6.png">
+					<span>
+						Venture support services
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="well-begun"> -->
+<div class="perfectspace">
+	<div layout="column" layout-align="center center" layout-margin flex>
+		<h1 flex>
+			Some of our popular workspaces near you
+		</h1>
+		<h4 flex >
+			By popular demand and amenities offered
+		</h4>
+	</div>
+	<div layout="row" layout-align="center start" flex>
+		<div flex flex-gt-md='80' flex-gt-lg='80' class="position-relative">
+				<!-- <md-card flex="33">
+					<img src="assets/images/well1.jpg">
+					<md-card-content>
+						Startup
+					</md-card-content>
+				</md-card>
+				<md-card flex="33">
+					<img src="assets/images/well2.jpg">
+					<md-card-content>
+						Freelancer
+					</md-card-content>
+				</md-card>
+				<md-card flex="33">
+					<img src="assets/images/well3.jpg">
+					<md-card-content>
+						Remote Team
+					</md-card-content>
+				</md-card> -->	
+			<slick 
+				infinite=true 
+				slides-to-show=3 
+				slides-to-scroll=1 
+				prev-arrow=".left-arrow" 
+				next-arrow=".right-arrow"
+				layout="row" 
+				flex>
+				<md-card flex="33" class="position-relative" ng-repeat="venue in home.venues">
+					<img src="assets/images/ggn.jpg">
+					<div class="perfectspace-city">
+						<span>
+
+							<!-- {{vanue.space_name ? venu.space_name : venue.space_type}} -->
+							{{venue.space_name ? venue.space_name : venue.space_type}}
+						</span>
+					</div>
+					<div class="price">
+						{{venue.per_day ? venue.per_day + '/Day' : venue.per_month + '/Month'}}
+					</div>
+					<div class="price" style="right: 0px;">
+						{{venue.city}}
+					</div>
+				</md-card>
+    		</slick>
+			<div class="left-arrow">
+				<img src="assets/images/left.png">
+			</div>
+			<div class="right-arrow">
+				<img src="assets/images/right.png">
+			</div>
+			<!-- <div layout="row" flex>
+				<md-card flex="33">
+					<img src="assets/images/well4.jpg">
+					<md-card-content>
+						Part Time/ Work From Home
+					</md-card-content>
+				</md-card>
+				<md-card flex="33">
+					<img src="assets/images/well5.jpg">
+					<md-card-content>
+						Small/ Medium Business
+					</md-card-content>
+				</md-card>
+				<md-card flex="33">
+					<img src="assets/images/well6.jpg">
+					<md-card-content>
+						Foreign Company
+					</md-card-content>
+				</md-card>	
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<div class="howitwork">
+	<div layout="column" layout-align="center center" layout-margin flex>
+		<h1 flex>
+			Our workspace solution for your Growing Business
+		</h1>
+	</div>
+	<div layout="row" layout-align="center start" flex>
+		<div flex flex-gt-md='80' flex-gt-lg='80'>
+			<div layout="row" flex>
+				<div layout="column" layout-margin flex="25" layout-align="center center">
+					<div class="grey-circle">
+						<img src="assets/images/p1.png">
+					</div>
+					<h4>Search</h4>
+					<p>
+						Find a work-station, meeting room, team office or even a virtual office at your fingertips. Our workspaces offer all must amenities
+					</p>
+				</div>
+
+				<div layout="column" layout-margin flex="25" layout-align="center center">
+					<div class="grey-circle">
+						<img src="assets/images/p2.png">
+					</div>
+					<h4>Book</h4>
+					<p>
+						Whether you need for a day, month or a year, get real-time availability. Pay securely with few clicks and get instant confirmation
+					</p>
+				</div>
+
+				<div layout="column" layout-margin flex="25" layout-align="center center">
+					<div class="grey-circle">
+						<img src="assets/images/p3.png">
+					</div>
+					<h4>Use</h4>
+					<p>
+						Plug and Play. Your space is always ready for you. Flexible cancellation policy and floatability to keep you in control at all times
+					</p>
+				</div>
+
+				<div layout="column" layout-margin flex="25" layout-align="center center">
+					<div class="grey-circle">
+						<img src="assets/images/p4.png">
+					</div>
+					<h4>Grow</h4>
+					<p>
+						Grow as you go! Flexibility to upgrade keeping your workspace as dynamic as your business. From a desk to large teams in all shapes
+					</p>
+				</div>
+			</div>
+			<div layout="row" layout-align="center center" flex>
+				<md-button class="learnmore">Learn More</md-button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="perfectspace">
+	<div layout="column" layout-align="center center" layout-margin flex>
+		<h1 flex>
+			One size does not fit all - find your Perfect Space
+		</h1>
+		<h4 flex >
+			We are working to achieve excellence before scale. We will be adding more locations and cities soon
+		</h4>
+	</div>
+	<div layout="row" layout-align="center start" flex>
+		<div flex flex-gt-md='80' flex-gt-lg='80' class="position-relative">
+			<slick 
+				infinite=true 
+				slides-to-show=3 
+				slides-to-scroll=3 
+				prev-arrow=".left" 
+				next-arrow=".right"
+				layout="row" 
+				flex>
+				<md-card flex="33" class="position-relative">
+					<img src="assets/images/ggn.jpg">
+					<div class="perfectspace-city">#Co-work in Gurgaon</div>
+				</md-card>
+				<md-card flex="33" class="position-relative">
+					<img src="assets/images/nda.jpg">
+					<div class="perfectspace-city">#Flexi-office in Noida</div>
+				</md-card>
+				<md-card flex="33" class="position-relative">
+					<img src="assets/images/dli.jpg">
+					<div class="perfectspace-city">#Meeting room in Delhi</div>
+				</md-card>
+				<md-card flex="33" class="position-relative">
+					<img src="assets/images/dli.jpg">
+					<div class="perfectspace-city">#Meeting room in Delhi</div>
+				</md-card>	
+    		</slick>
+			<div class="left">
+				<img src="assets/images/left.png">
+			</div>
+			<div class="right">
+				<img src="assets/images/right.png">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="testimonial">
+	<div layout="column" layout-align="center center" layout-margin flex>
+		<h1 flex>
+			How the users get smiles to use cosphere and 
+			<br/>appreciate our Hard Work
+		</h1>
+	</div>
+	<div layout="row" layout-align="center start" flex>
+		<div flex flex-gt-md='85' flex-gt-lg='85'>
+			<div layout="row" flex>
+				<div flex="50" layout-align="center center" layout="row" ng-repeat="testimonial in home.testimonials">
+					<div class="testimonial-commnet-box">
+						<p>
+							<!-- "As a start-up, Cosphere was easily able to address our prime concerns - high speed internet, a space conducive for client meetings and privacy. Since we had a small team, we had initial apprehensions pertaining to getting the right office space, but Cosphere made it look rather easy" -->
+							{{testimonial.comment}}
+						</p>
+						<div class="userimg">
+							<img ng-src="{{testimonial.imageSrc}}">
+						</div>
+						<div class="userdetail-designation">
+							{{testimonial.name}}<br>
+							{{testimonial.designation}}, {{testimonial.company}}
+						</div>
+					</div>
+				</div>
+
+				<!-- <div flex="50" layout="row" layout-align="center center">
+					<div class="testimonial-commnet-box">
+						<p>
+							"As a start-up, Cosphere was easily able to address our prime concerns - high speed internet, a space conducive for client meetings and privacy. Since we had a small team, we had initial apprehensions pertaining to getting the right office space, but Cosphere made it look rather easy"
+						</p>
+						<div class="userimg">
+							<img src="assets/images/testimonial.png">
+						</div>
+						<div class="userdetail-designation">
+							Siddhartha Lakhera | Vishal Khemka<br>
+							Co-Founders, Clairvoyant Mobile Solutions
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(window).scroll(function(){
+		if ($(window).scrollTop() >= 300) {
+			$('.toolbar-header').removeClass('nobg');
+		}
+		else {
+			$('.toolbar-header').addClass('nobg');
+		}
+	});
+</script>
+</div>

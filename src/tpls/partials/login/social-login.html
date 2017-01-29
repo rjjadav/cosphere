@@ -1,0 +1,23 @@
+<div layout="column" layout-margin class="ph-40">
+	<md-button class="md-primary md-raised margin-top-80  btn-google-plus" flex ng-click="login.gplusLogin()">
+		<i class="fa fa-google-plus" aria-hidden="true"></i> 
+		Continue With Google+
+	</md-button>
+
+	<md-button class="md-primary md-raised btn-fb" flex ng-click="login.fbLogin()">
+		<i class="fa fa-facebook" aria-hidden="true"></i> 
+		Continue With Facebook
+	</md-button>
+
+	<div class="line">
+		<div class="circle">OR</div>
+	</div>
+
+	<md-button class="md-primary md-raised" flex ng-click="login.dialog='login'">
+		login
+	</md-button>
+
+	<md-button class="md-primary md-raised btn-white-hover" flex ng-click="login.dialog = 'registration'">
+		create Your Account
+	</md-button>
+</div>

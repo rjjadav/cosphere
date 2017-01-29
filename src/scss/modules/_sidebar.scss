@@ -1,0 +1,12 @@
+#quick-panel{
+	background-color: $quick-panel-bg-color;
+	color: $quick-panel-font-color;
+
+	.support-header{
+		color: #333;
+	}
+}
+
+md-backdrop.md-opaque {
+    opacity: .0;
+}

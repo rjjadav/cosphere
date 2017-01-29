@@ -1,0 +1,18 @@
+@import 'bourbon';
+@import 'neat';
+
+@import 'shared';
+@import 'base';
+@import 'fonts';
+@import 'helper';
+@import 'button';
+
+@import 'modules/**/*';
+@import 'node_modules/angular-material/angular-material.scss';
+@import 'node_modules/angular-material-icons/angular-material-icons.css';
+@import 'node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+$fa-font-path:"../assets/fonts/fa-fonts";
+@import 'node_modules/font-awesome/scss/font-awesome';
+@import 'node_modules/slick-carousel/slick/slick.scss';
+@import 'node_modules/slick-carousel/slick/slick-theme.scss';
+

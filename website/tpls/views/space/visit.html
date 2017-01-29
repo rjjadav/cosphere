@@ -1,0 +1,67 @@
+<md-dialog class="visitdiv">
+	<md-toolbar class="white-bg visit-toolbar">
+		<div class="md-toolbar-tools">
+			<h4 flex>
+				Inspect First
+			</h4>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="visit.hide()">
+				<i class="fa fa-close" aria-hidden="false"></i>
+			</md-button>
+		</div>
+	</md-toolbar>
+
+	<div ng-init="check = 'checked'" class="m-15">
+		<md-radio-group ng-model="check" flex>
+			<md-radio-button value="checked" class="md-primary" checked>
+				Dedicated Desk<br/>
+				Gurgaon
+			</md-radio-button>
+		</md-radio-group>
+	</div>
+
+	<div layout="row" layout-margin layout-wrap >
+		<md-input-container flex="45">
+			<label>Name</label>
+			<input type="text" ng-model="visit.visitorDetail.name" required/>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Email</label>
+			<input type="email" ng-model="visit.visitorDetail.email" required/>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Phone</label>
+			<input type="text" ng-model="visit.visitorDetail.phone" required/>
+		</md-input-container>
+
+		<md-input-container flex="45">
+			<label>Date</label>
+			<input type="text" ng-model="visit.visitorDetail.date" required/>
+		</md-input-container>
+
+		<!-- <div layout="row" > -->
+		<md-input-container flex="45">
+			<md-select  ng-model="visit.visitorDetail.time" required placeholder="Time">
+				<md-option>1</md-option>
+				<md-option>1</md-option>
+				<md-option>1</md-option>
+				<md-option>1</md-option>
+				<md-option>1</md-option>
+			</md-select>	
+		</md-input-container>
+		<!-- </div> -->
+		
+
+		<md-input-container flex="45">
+			<label>Your Message</label>
+			<textarea ng-model="visit.visitorDetail.message" required></textarea>
+		</md-input-container>
+	</div>
+	<div layout="row" layout-margin layout-padding>
+		<md-button flex class="md-raised md-primary">
+			Schedule Now
+		</md-button>
+	</div>
+</md-dialog>

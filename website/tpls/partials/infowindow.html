@@ -1,0 +1,24 @@
+<div>
+<div ng-repeat="space in search.spaceInfo">
+<div layout="row" flex layout-margin>
+	<img src="http://cosphere.in:29193/bmdimgvideos/spacemainimg/356x281/{{space.thumbnailPic}}" style="width:100px;height:65px;">
+	<div layout="column">
+		<span style="font-size:16px;color:#44a5d1;font-weight:bold">{{space.spaceType}} @ {{space.city}}</span>	
+		<h6 style="font-weight: normal; font-size: 16px;" ng-if="space.spacePlanTerm == 'Day,Monthly'">
+			<i class="fa fa-inr" aria-hidden="true"></i> 
+			{{space.perDay}}/Day
+		</h6>
+		<h6 style="font-weight: normal; font-size: 16px;" ng-if="space.spacePlanTerm == 'hourly,Day'">
+			<i class="fa fa-inr" aria-hidden="true"></i> 
+			{{space.perHalfDay}}/Hour
+		</h6>
+		<h6 style="font-weight: normal; font-size: 16px;" ng-if="space.spacePlanTerm == 'Monthly'">
+			<i class="fa fa-inr" aria-hidden="true"></i> 
+			{{space.perMonth}}/Month
+		</h6>
+	</div>
+	
+</div>
+
+</div>
+</div>

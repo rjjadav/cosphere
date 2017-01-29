@@ -1,0 +1,202 @@
+<md-content class="pt-64" id="spaceSection" ng-cloak>
+	<div class="slider-section">
+	<img src="http://cosphere.in:29193/bmdimgvideos/spacemainimg/{{space.spaceDetails.mainPic}}">
+	</div>
+
+	<div class="space-details white-bg" layout="row" layout-align="center center">
+		<div flex flex-gt-md='85' flex-gt-lg='85'>
+			<div layout="column" flex="55">
+				<h3>
+					{{space.spaceDetails.spaceType}} @ {{space.venueDetailsBean.venue_category}}
+					<div class="verified">
+						<div class="verfiedcircle">
+							<i class="fa fa-check"></i>
+						</div>
+						<div class="verifiedtext">
+							Verified
+						</div>
+					</div>
+					<span class="neardetail">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						0.40KM
+					</span>
+				</h3>
+				<div>
+					<p>{{space.venueDetailsBean.venue_name}}, {{space.venueDetailsBean.area_tag}} | {{space.venueDetailsBean.city}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="space-info" layout="row" layout-align="center center">
+		<div flex flex-gt-md='85' flex-gt-lg='85' layout="row" layout-margin>
+			<div layout="column" flex="66" class="md-whiteframe-1dp white-bg">
+				<div class="titlessection">
+					Amenities
+				</div>
+				<div layout="row" lauout-margin layout-wrap class="amenities-list">
+					<div flex="33" ng-repeat="amenity in space.spaceDetails.freeamenities track by $index">
+						<img src="{{space.amenities[amenity].image}}">
+						{{space.amenities[amenity].name}} 
+					</div>
+				</div>
+
+				<div layout="row" class="avail">
+					<div flex=50>
+						<div class="workingfeature">
+							<div class="tablefull">
+								<div class="imgtable">
+									<img src="assets/images/workinghrs.png">
+								</div>
+								<div class="texttable">
+									<strong>Opening Hours</strong><br>
+									Mon-Fri: {{space.venueDetailsBean.mon_op_time}} to {{space.venueDetailsBean.mon_clos_time}} <br>
+									Sat: {{space.venueDetailsBean.sat_op_time}} to {{space.venueDetailsBean.sat_clos_time}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div flex=50>
+						<div class="workingfeature noborder">
+							<div class="tablefull">
+								<div class="imgtable">
+									<img src="assets/images/capcity.png">
+								</div>
+							
+								<div class="texttable">
+								<strong>Capacity</strong><br>
+									{{space.venueDetailsBean.capacity_desk}} Desks | {{space.venueDetailsBean.capacity_room}} Rooms | {{space.venueDetailsBean.capacity_meeting_room}} Meeting Rooms
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div layout="column">
+					<div class="titlessection">
+						Amenities
+					</div>
+					<div class="desc" layout="row" layout-padding>
+						{{space.spaceDetails.space_desc}}
+					</div>
+				</div>
+			</div>
+
+			<div layout="column" flex="33" style="position: relative;top: -192px;" class="reserve-section">
+				<div class="md-whiteframe-1dp white-bg">
+					<div class="titlessection">
+						To Reserve This Cosphere
+					</div>
+					<div layout="column" layout-margin>	
+						<md-radio-group ng-model="space.selectedPlan">
+							<md-radio-button value="hourly" ng-if="space.spaceDetails.perHalfDay">
+								<i class="fa fa-inr" aria-hidden="false"></i>
+								{{space.spaceDetails.perHalfDay}}/Hour ( {{space.spaceDetails.spaceType}} )
+							</md-radio-button>
+
+							<md-radio-button value="daily" ng-if="space.spaceDetails.perDay">
+								<i class="fa fa-inr" aria-hidden="false"></i>
+								{{space.spaceDetails.perDay}}/Day ( {{space.spaceDetails.spaceType}} )
+							</md-radio-button>
+							
+							<md-radio-button value="monthly" ng-if="space.spaceDetails.perMonth">
+								<i class="fa fa-inr" aria-hidden="false"></i>
+								{{space.spaceDetails.perMonth}}/Month ( {{space.spaceDetails.spaceType}} )
+							</md-radio-button>
+						</md-radio-group>
+
+						<!-- <span ng-if="space.spaceDetails.perDay">
+							<i class="fa fa-inr" aria-hidden="false"></i>
+							{{space.spaceDetails.perDay}}/Day ( {{space.spaceDetails.spaceType}} )
+						</span>
+						<span ng-if="space.spaceDetails.perHalfDay ">
+							<i class="fa fa-inr" aria-hidden="false"></i>
+							{{space.spaceDetails.perHalfDay}}/Hour ( {{space.spaceDetails.spaceType}} )
+						</span>
+						<span ng-if="space.spaceDetails.perMonth">
+							<i class="fa fa-inr" aria-hidden="false"></i>
+							{{space.spaceDetails.perMonth}}/Month ( {{space.spaceDetails.spaceType}} )
+						</span> -->
+					</div>
+
+					<div flex layout="row" layout-margin>
+						<md-input-container flex="100" layout="row">
+							<label>Enter date</label>
+							<md-datepicker ng-model="space.reservationDate" name="dateField" md-min-date="space.minDate" md-max-date="maxDate" flex="100">
+							</md-datepicker>
+						</md-input-container>
+						<span class="input-icon-right">
+							<i class="fa fa-calendar" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+					<div layout="row" flex layout-margin>
+						<md-input-container flex="100" ng-click="displayTimeSection = true">
+							<label>Select Time</label>
+							<input type="text" ng-model="space.reservationTime" readonly />
+						</md-input-container>
+						<span class="input-icon-right">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div 
+						layout="row" 
+						flex  
+						class="counter" 
+						ng-show="displayTimeSection == true">
+						<div flex="50" layout-padding>
+							<div class="counts">
+							<button class="button-minus" ng-click="space.decrementCounter(space.selectedPlan)">
+								-
+							</button>
+							<input type="text" ng-model="space.counter">
+							<button class="button-plus" ng-click="space.incrementCounter(space.selectedPlan)">
+								+
+							</button>
+							</div>
+						</div>
+						<div flex="50" layout="row" layout-align="center center">
+							<md-button 
+							class="md-primary md-raised" 
+							ng-click="displayTimeSection = false">Add Duration</md-button>	
+						</div>
+						
+					</div>
+
+					<div layout="row" flex layout-margin>
+						<md-button class="md-primary md-raised" flex>Book Now</md-button>
+						<md-button flex class="btn-white-hover md-raised" ng-click="space.showVisitDialogBox($event)">Visit First</md-button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div layout="row" layout-align="center center" style="min-height:300px;">
+		<div layout="row" flex flex-gt-md='85' flex-gt-lg='85' class="md-whiteframe-1dp" style="min-height:300px;">
+			<ng-map zoom="11" center="{{space.venueDetailsBean.gmap_coordinates}}" style="min-height:300px;min-width: 600px;width: 100%;">
+				<marker
+				icon="assets/images/map-icon.png" 
+				position="{{space.venueDetailsBean.gmap_coordinates}}">
+				</marker>
+			</ng-map>
+		</div>
+	</div>
+
+<md-fab-speed-dial md-direction="left" class="md-fling share-fab-button" >
+	<md-fab-trigger>
+		<md-button aria-label="menu" class="md-fab md-warn">
+			<i class="fa fa-share-alt font-size-18" aria-hidden="true"></i>
+		</md-button>
+	</md-fab-trigger>
+
+	<md-fab-actions>
+		<md-button aria-label="Twitter" class="md-fab md-raised md-mini twitter-fab">
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+		</md-button>
+		<md-button aria-label="Facebook" class="md-fab md-raised md-mini fb-fab">
+			<i class="fa fa-facebook" aria-hidden="true"></i>
+		</md-button>
+	</md-fab-actions>
+</md-fab-speed-dial>
+</md-content>

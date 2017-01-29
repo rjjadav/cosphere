@@ -1,0 +1,21 @@
+<md-dialog flex="60">
+<div class="logintable">
+	<div class="info-section">
+		<div class="layer-logo">
+			<img src="assets/images/layer-logo.png">
+		</div>
+		<ul class="cosphere-feature">
+			<li>Unique venue spaces</li>
+			<li>Fast & Secure booking</li>
+			<li>Instant confirmation</li>
+			<li>No brokerage</li>
+		</ul>
+	</div>
+
+	<div class="content-section">
+		<div ng-include="'tpls/partials/login/social-login.html'" ng-if="login.dialog == 'main'"></div>
+		<div ng-include="'tpls/partials/login/login-main.html'" ng-if="login.dialog == 'login'"></div>
+		<div ng-include="'tpls/partials/login/registration.html'" ng-if="login.dialog == 'registration'"></div>
+	</div>
+</div>
+</md-dialog>

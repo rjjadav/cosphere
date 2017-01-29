@@ -1,0 +1,54 @@
+<div class="md-toolbar-tools">
+	<div class="full-height">
+		<img src="assets/images/white-logo.png" class="full-height">
+	</div>
+	<div flex layout="row" layout-padding layout-margin>
+		<md-button class="toolbar-button">Need Space</md-button>
+		<md-button class="toolbar-button">List Space</md-button>
+	</div>
+	<span flex></span>
+	
+	<div ng-if="!isLoggedin">
+		<md-button ng-click="vm.showLoginDialog($event)">Login/Register</md-button>	
+	</div>
+
+	<div ng-if="isLoggedin" >
+		
+		<md-menu-bar id="user-menu">
+			<md-menu>
+				<md-button ng-click="$mdOpenMenu()">
+					<div layout="row" layout-align="space-between center"  class="user-details">
+						<img src="{{profilePic}}">
+						<span>{{userName}}</span>
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</div>
+				</md-button>
+				<md-menu-content width="3">
+					<md-menu-item class="position-relative">
+						<i class="fa fa-tachometer icon" aria-hidden="true"></i>
+						<md-button ng-click="null" class="pl-40">
+							Dashboard
+						</md-button>
+					</md-menu-item>
+					<md-menu-item class="position-relative">
+						<i class="fa fa-user icon" aria-hidden="true"></i>
+						<md-button ng-click="null" class="pl-40">
+							Profile
+						</md-button>
+					</md-menu-item>
+					<md-menu-divider></md-menu-divider>
+					<md-menu-item class="position-relative">
+						<i class="fa fa-sign-out icon" aria-hidden="true"></i>
+						<md-button ng-click="vm.logout()" class="pl-40">
+							Logout
+						</md-button>
+					</md-menu-item>
+				</md-menu-content>
+			</md-menu>
+		</md-menu-bar>
+	</div>
+	
+	<md-button class="md-icon-button" aria-label="Settings" ng-click="toolbar.toggleSidenav('quick-panel')">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</md-button>
+</div>

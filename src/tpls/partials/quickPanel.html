@@ -1,0 +1,28 @@
+<div layout="column" flex>
+	<div layout="column" layout-align="center end">
+		<md-button class="md-icon-button" aria-label="Settings" ng-click="qp.toggleSidenav('quick-panel')">
+			<i class="fa fa-times font-size-20" aria-hidden="true"></i>
+		</md-button>
+	</div>
+	<md-list flex>
+		<md-list-item ng-click="vm.showLoginDialog($event)" ng-if="!isLoggedin">
+			<p>LOGIN/REGISTER</p>
+		</md-list-item>
+
+		<md-list-item ng-click="vm.logout()" ng-if="isLoggedin">
+			<p>LOGOUT</p>
+		</md-list-item>
+
+		<md-list-item ng-repeat="option in qp.qpMenuOptions" ng-click="null">
+			<p>{{option.name}}</p>
+		</md-list-item>
+
+		<md-list-item class="support-header">
+			Need Any Support
+		</md-list-item>
+
+		<md-list-item href="tel:9999110300">+91 - 9999110300</md-list-item> 
+		<md-list-item href="mailto:info@cosphere.in">info@cosphere.in</md-list-item>
+	</md-list>
+
+</div>

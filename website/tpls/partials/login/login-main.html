@@ -1,0 +1,33 @@
+<div layout="column" flex>
+	<div layout="row" layout-align="center center">
+		<md-button class="md-icon-button" aria-label="More" ng-click="login.dialog = 'main'">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</md-button>
+		<h3 layout="row" layout-align="center center" flex>Login</h3>	
+	</div>
+	
+	<div layout="column" layout-margin flex>
+		<md-input-container flex>
+			<label>Email</label>
+			<input type="email" ng-model="login.login.email" required>
+		</md-input-container>
+
+		<md-input-container flex>
+			<label>Password</label>
+			<input type="password" ng-model="login.login.password" required>
+		</md-input-container>
+
+		<md-button class="md-primary md-raised" flex>
+			Login
+		</md-button>
+
+		<md-button class="md-primary" flex>
+			Forgot Password?
+		</md-button>
+	</div>
+
+	<div class="bottom mt-20">
+		Dont have an account? 
+		<a href="javascript:void(0)" ng-click="login.dialog = 'registration'">Sign Up</a>
+	</div>
+</div>
